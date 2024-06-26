@@ -6,11 +6,11 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     background-color: hsl(148, 38%, 91%);
     font-family: "Karla";
 }
-main, form>input, .QueryType div, button{
+main, input, .QueryType div, button{
     border-radius: 10px;
 
     -webkit-border-radius: 10px;
@@ -19,28 +19,41 @@ main, form>input, .QueryType div, button{
     -o-border-radius: 10px;
 }
 main{
+    max-width: 687.2px;
     padding: 1.5em;
+    box-sizing: border-box;
     background-color: #fff;
 }
 h1{
-    margin: 0 0 1em;
+    margin: 0;
 }
 form{
     display: flex;
     flex-direction: column;
 }
-form> :first-child{
+.name{
     margin-top: 0;
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
 }
-label{
-    color: hsl(187, 24%, 22%);
-    margin: 25px 0 10px;
+.name div, .QueryType div{
+    width: 260px;
+    flex: 1 1 157px;
+}
+.name div{
+    display: flex;
+    flex-direction: column;
 }
 .not-filled::after{
     content: " *";
     color: hsl(169, 82%, 27%)
 }
-form>input, .QueryType div{
+label{
+    color: hsl(187, 24%, 22%);
+    margin: 25px 0 10px;
+}
+input, .QueryType div{
     border: 1px solid hsl(169, 82%, 27%);
     padding: 1em;
 }
@@ -50,10 +63,11 @@ form>input:hover, .QueryType div:hover{
 
 .QueryType{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 20px
 }
 .QueryType div{
+    /* width: 100%; */
     display: flex;
     position: relative;
 }
