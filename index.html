@@ -16,24 +16,31 @@
   <main>
     <h1>Contact Us</h1>
     <form action="">
-      <label for="FirstName">First Name</label>
-      <input type="text" id="FirstName" placeholder="">
-      <label for="LastName">Last Name</label>
-      <input type="text" id="LastName" placeholder="">
-      <label for="Email">Email Address</label>
-      <input type="email" id="Email" placeholder="">
+      <label for="FirstName" class="not-filled">First Name</label>
+      <input type="text" id="FirstName">
+      <label for="LastName" class="not-filled">Last Name</label>
+      <input type="text" id="LastName">
+      <label for="Email" class="not-filled">Email Address</label>
+      <input type="email" id="Email">
+      <label for="" class="not-filled">Query Type</label>
       <section class="QueryType">
-        <label for="">Query Type</label>
-        <input type="radio" name="QueryType" id="QT1">
-        <label for="QT1">General Enquiry</label>
-        <input type="radio" name="QueryType" id="QT2">
-        <label for="QT2">Support Request</label>
+        <div>
+          <label for="QT1">General Enquiry</label>
+          <input type="radio" name="QueryType" id="QT1">
+          <span class="checkmark"></span>
+        </div>
+        <div>
+          <label for="QT2">Support Request</label>
+          <input type="radio" name="QueryType" id="QT2">
+          <span class="checkmark"></span>
+        </div>
       </section>
-      <label for="message">Message</label>
+      <label for="message" class="not-filled">Message</label>
       <input type="text" id="message">
       <section class="consent">
         <input type="checkbox" id="consent">
-        <label for="consent">I consent to being contacted by the team</label>
+        <label for="consent" class="not-filled">I consent to being contacted by the team</label>
+        <span class="toggle"></span>
       </section>
       <button type="button">Submit</button>
     </form>

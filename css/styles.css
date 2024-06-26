@@ -1,5 +1,6 @@
 body{
     min-height: 100vh;
+    padding: 1em;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -9,41 +10,132 @@ body{
     background-color: hsl(148, 38%, 91%);
     font-family: "Karla";
 }
+main, form>input, .QueryType div, button{
+    border-radius: 10px;
 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+main{
+    padding: 1.5em;
+    background-color: #fff;
+}
+h1{
+    margin: 0 0 1em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form> :first-child{
+    margin-top: 0;
+}
+label{
+    color: hsl(187, 24%, 22%);
+    margin: 25px 0 10px;
+}
+.not-filled::after{
+    content: " *";
+    color: hsl(169, 82%, 27%)
+}
+form>input, .QueryType div{
+    border: 1px solid hsl(169, 82%, 27%);
+    padding: 1em;
+}
+form>input:hover, .QueryType div:hover{
+    outline: 1px solid hsl(169, 82%, 27%)
+}
 
+.QueryType{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.QueryType div{
+    display: flex;
+    position: relative;
+}
+.QueryType div input{
+    width: 0;
+    margin: 0;
+}
+.QueryType div label{
+    padding-left: 30px;
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+    z-index: 3;
+}
+.QueryType div input:checked ~ .checkmark::before{
+    content: "";
+    display: block;
+    width: 12px;
+    aspect-ratio: 1/1;
+    position: relative;
+    margin: auto;
+    background-color: hsl(186, 15%, 59%);
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+.checkmark{
+    width: 15px;
+    aspect-ratio: 1/1;
+    display: flex;
+    position: absolute;
+    top: 34%;
+    border-radius: 100px;
+    border: 2px solid hsl(186, 15%, 59%);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+.QueryType ~ input{
+    min-height: 13em;
+}
+.consent{
+    margin: 2em 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.consent label{
+    margin: 0;
+    padding-left: 30px;
+    z-index: 3;
+}
+.consent input{
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+.consent input:checked ~ .toggle{
+    background: url("../assets/images/icon-checkbox-check.svg");
+    background-position: center;
+}
+.toggle{
+    display: block;
+    position: absolute;
+    width: 20px;
+    aspect-ratio: 1/1;
+    border: 2px solid hsl(169, 82%, 27%);
+    margin-right: 20px;
+}
+button{
+    padding: 1rem;
+    border: none;
+    background-color: hsl(169, 82%, 27%);
+    color: white;
+    font-size: 20px;
+}
+button:hover{
+    background-color: hsl(169, 82%, 17%);
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
