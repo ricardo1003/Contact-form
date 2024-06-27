@@ -6,7 +6,9 @@ const radioInputElements = [...document.getElementsByClassName("radioInput")]
 const invalidStateTextRadio = document.getElementById("textInputRadio")
 const CheckInputElement = document.getElementById("consent")
 const invalidStateTextCheck = document.getElementsByClassName("textInputCheck")[0]
-
+const emailInput = document.getElementById("Email")
+const emailInvalidText = document.getElementsByClassName("emailInvalidText")[0]
+console.log(emailInvalidText)
 
 sendButtonElement.addEventListener("click", ()=>{
     for (let i=0; i<inputElements.length; i++){
@@ -28,7 +30,7 @@ sendButtonElement.addEventListener("click", ()=>{
             console.log(invalidStateTextText[i])
     }
 }
-    let anychecked = false
+let anychecked = false
     radioInputElements.forEach(button =>{
         button.addEventListener("click", () =>{
             textInputRadio.classList.add("valid-Value-Text")
@@ -47,6 +49,10 @@ sendButtonElement.addEventListener("click", ()=>{
         invalidStateTextCheck.classList.add("valid-Value-Text")
     }else{
         invalidStateTextCheck.classList.remove("valid-Value-Text")
+    }
+    const atPosition = emailInput.value.indexOf("@")
+    if (emailInput.value.indexOf(".com") === -1 || emailInput.value.indexOf("@") === -1 || emailInput[atPosition+1] === "."){
+        emailInvalidText.classList.remove("valid-Value-Text")
     }
 })
 
