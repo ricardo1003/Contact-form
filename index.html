@@ -18,35 +18,41 @@
     <form action="">
       <div class="name">
         <div>
-          <label for="FirstName" class="not-filled">First Name</label>
-          <input type="text" id="FirstName">
+          <label for="FirstName" class="labelText important">First Name</label>
+          <input type="text" class="textInput" id="FirstName">
+          <p class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
         </div>
         <div>
-          <label for="LastName" class="not-filled">Last Name</label>
-          <input type="text" id="LastName">
+          <label for="LastName" class="labelText important">Last Name</label>
+          <input type="text" class="textInput" id="LastName">
+          <p class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
         </div>
       </div>
-      <label for="Email" class="not-filled">Email Address</label>
-      <input type="email" id="Email">
-      <label for="" class="not-filled">Query Type</label>
+      <label for="Email" class="labelText important">Email Address</label>
+      <input type="email" class="textInput" id="Email">
+      <p class="invalid-Value-Text valid-Value-Text textInputText">Please enter a valid email address</p>
+      <label for="" class="labelRadio important ">Query Type</label>
       <section class="QueryType">
         <div>
-          <label for="QT1">General Enquiry</label>
-          <input type="radio" name="QueryType" id="QT1">
+          <label for="QT1" class="labeRadiot">General Enquiry</label>
+          <input type="radio" class="radioInput" name="QueryType" id="QT1">
           <span class="checkmark"></span>
         </div>
         <div>
-          <label for="QT2">Support Request</label>
-          <input type="radio" name="QueryType" id="QT2">
+          <label for="QT2" class="labelRadio">Support Request</label>
+          <input type="radio" class="radioInput" name="QueryType" id="QT2">
           <span class="checkmark"></span>
         </div>
       </section>
-      <label for="message" class="not-filled">Message</label>
-      <input type="text" id="message">
+      <p class="invalid-Value-Text valid-Value-Text" id="textInputRadio">Please select a query type</p>
+      <label for="message" class="labelText important">Message</label>
+      <textarea class="textInput" id="message"></textarea>
+      <p class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
       <section class="consent">
-        <input type="checkbox" id="consent">
-        <label for="consent" class="not-filled">I consent to being contacted by the team</label>
+        <input type="checkbox" class="checkInput" id="consent">
+        <label for="consent" class="labelCheck important">I consent to being contacted by the team</label>
         <span class="toggle"></span>
+        <p class="invalid-Value-Text valid-Value-Text textInputCheck">To submit this form, please consent to being contacted</p>
       </section>
       <button type="button">Submit</button>
     </form>
@@ -54,19 +60,6 @@
   
 
   <!--
-  This field is required
-
-  This field is required
-  
-  Please enter a valid email address
-  This field is required
-  
-  Please select a query type
-  
-  This field is required
-
-  To submit this form, please consent to being contacted
-
   Message Sent!
   Thanks for completing the form. We'll be in touch soon!
 -->
