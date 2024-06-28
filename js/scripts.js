@@ -76,6 +76,9 @@ let anychecked = false
         formElement.reset()
         sucessMesage.classList.remove("noSuccess")
         console.log("success!!")
+        setTimeout(() => {
+            sucessMesage.classList.add("noSuccess");
+        }, 5000)
     }else{
         sendButtonElement.type = "button"
         console.log("failure.")

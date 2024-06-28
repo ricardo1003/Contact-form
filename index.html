@@ -13,7 +13,7 @@
   <title>Frontend Mentor | Contact form</title>
 </head>
 <body>
-  <div class="successMessage noSuccess">
+  <div class="successMessage noSuccess" aria-live="polite">
     <div>
       <img src="./assets/images/icon-success-check.svg" alt="">
       <h3>Message Sent!</h3>
@@ -27,17 +27,17 @@
         <div>
           <label for="FirstName" class="labelText important">First Name</label>
           <input type="text" class="textInput" id="FirstName">
-          <p class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
+          <p aria-live="assertive" role="alert" class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
         </div>
         <div>
           <label for="LastName" class="labelText important">Last Name</label>
           <input type="text" class="textInput" id="LastName">
-          <p class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
+          <p aria-live="assertive" role="alert" class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
         </div>
       </div>
       <label for="Email" class="labelText important">Email Address</label>
       <input type="email" class="textInput" id="Email">
-      <p class="invalid-Value-Text valid-Value-Text textInputText emailInvalidText">Please enter a valid email address</p>
+      <p aria-live="assertive" role="alert" class="invalid-Value-Text valid-Value-Text textInputText emailInvalidText">Please enter a valid email address</p>
       <label for="" class="labelRadio important ">Query Type</label>
       <section class="QueryType">
         <div class="queryDiv">
@@ -51,15 +51,15 @@
           <span class="checkmark"></span>
         </div>
       </section>
-      <p class="invalid-Value-Text valid-Value-Text" id="textInputRadio">Please select a query type</p>
+      <p aria-live="assertive" role="alert" class="invalid-Value-Text valid-Value-Text" id="textInputRadio">Please select a query type</p>
       <label for="message" class="labelText important">Message</label>
       <textarea class="textInput" id="message"></textarea>
-      <p class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
+      <p aria-live="assertive" role="alert" class="invalid-Value-Text valid-Value-Text textInputText">This field is required</p>
       <section class="consent">
         <input type="checkbox" class="checkInput" id="consent">
         <label for="consent" class="labelCheck important">I consent to being contacted by the team</label>
         <span class="toggle"></span>
-        <p class="invalid-Value-Text valid-Value-Text textInputCheck">To submit this form, please consent to being contacted</p>
+        <p aria-live="assertive" role="alert" class="invalid-Value-Text valid-Value-Text textInputCheck">To submit this form, please consent to being contacted</p>
       </section>
       <button type="button">Submit</button>
     </form>
