@@ -13,24 +13,27 @@ const invalidStateTextRadio = document.getElementById("textInputRadio")
 
 const CheckInputElement = document.getElementById("consent")
 const invalidStateTextCheck = document.getElementsByClassName("textInputCheck")[0]
+const checkLabel = document.getElementsByClassName("labelCheck")[0]
 
 const sendButtonElement = document.getElementsByTagName("button")[0]
 
+const sucessMesage = document.getElementsByClassName("successMessage")[0]
 
+
+let formSuccess = false
 
 
 sendButtonElement.addEventListener("click", ()=>{
     for (let i=0; i<inputElements.length; i++){
         if(inputElements[i].value.trim() === ""){
             inputElements[i].classList.add("invalidValue")
-            console.log("oye >:(")
+            formSuccess = false
         }else{
             for (let i=0; i<invalidStateTextText.length; i++){
                 invalidStateTextText[i].classList.add("valid-Value-Text")
-                console.log("2")
             }
             inputElements[i].classList.remove("invalidValue")
-            console.log("bien")
+            formSuccess = true
         }
     }
     for (let i=0; i<invalidStateTextText.length; i++){
@@ -50,18 +53,32 @@ let anychecked = false
     })
     if (anychecked){
         textInputRadio.classList.add("valid-Value-Text")
+        formSuccess = true
     }else{
         textInputRadio.classList.remove("valid-Value-Text")
+        formSuccess = false
     }
 
     if(CheckInputElement.checked){
         invalidStateTextCheck.classList.add("valid-Value-Text")
+        formSuccess = true
     }else{
         invalidStateTextCheck.classList.remove("valid-Value-Text")
+        formSuccess = false
     }
     const atPosition = emailInput.value.indexOf("@")
     if (emailInput.value.indexOf(".com") === -1 || emailInput.value.indexOf("@") === -1 || emailInput[atPosition+1] === "."){
+        formSuccess = false
         emailInvalidText.classList.remove("valid-Value-Text")
+    }
+
+    if (formSuccess){
+        formElement.reset()
+        sucessMesage.classList.remove("noSuccess")
+        console.log("success!!")
+    }else{
+        sendButtonElement.type = "button"
+        console.log("failure.")
     }
 })
 
@@ -70,16 +87,10 @@ for(let i=0; i < inputElements.length; i++){
         if(inputElements[i].value.trim() !== ""){
             invalidStateTextText[i].classList.add("valid-Value-Text")
             inputElements[i].classList.remove("invalidValue")
-            console.log("bien")
+            formSuccess = true
         }
     })
 }
-
-CheckInputElement.addEventListener("click", ()=>{
-    if(CheckInputElement.checked){
-        invalidStateTextCheck.classList.add("valid-Value-Text")
-    }
-})
 
 function isRadioFocused(element) {
     return document.activeElement === element;
@@ -95,4 +106,20 @@ radioInputElements.forEach(radio =>{
             }
         }
     })
+})
+
+CheckInputElement.addEventListener("click", ()=>{
+    if(CheckInputElement.checked){
+        invalidStateTextCheck.classList.add("valid-Value-Text")
+        formSuccess = true
+    }
+})
+
+CheckInputElement.addEventListener("focus", ()=>{
+    if(isRadioFocused(CheckInputElement)){
+        checkLabel.classList.add("checkFocused")
+    }
+})
+CheckInputElement.addEventListener("blur", ()=>{
+    checkLabel.classList.remove("checkFocused")
 })

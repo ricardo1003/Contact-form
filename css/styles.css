@@ -141,6 +141,7 @@ textarea{
     width: 20px;
     aspect-ratio: 1/1;
     position: absolute;
+    top: 0;
     left: 0;
     border: 2px solid hsl(169, 82%, 27%);
     margin-right: 20px;
@@ -152,8 +153,9 @@ button{
     color: white;
     font-size: 20px;
 }
-button:hover{
+button:hover, button:focus{
     background-color: hsl(169, 82%, 17%);
+    outline: none;
 }
 .invalidValue{
     border: 1px solid hsl(0, 66%, 54%);
@@ -172,13 +174,46 @@ form> .invalidValue:hover,.name .invalidValue:hover{
 .valid-Value-Text{
     display: none;
 }
-
 .queryFocused{
     outline: 1px solid hsl(169, 82%, 17%);
 }
+.checkFocused{
+    text-decoration: underline;
+}
 
+.successMessage{
+    max-width: 375px;
+    padding: 1.5em;
+    position: fixed;
 
+    top: 1em;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 10px;
+    background-color: hsl(187, 24%, 22%);
+    filter: opacity(.99);
 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-filter: opacity(.99);
+}
+.noSuccess{
+    display: none;
+}
+.successMessage div{
+    display: flex;
+    gap: 10px;
+}
+h3{
+    margin: 0;
+}
+.successMessage p{
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: .815em;
+}
 
 
 .attribution { font-size: 11px; text-align: center; }
