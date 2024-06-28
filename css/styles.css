@@ -57,7 +57,8 @@ input, .QueryType div, textarea{
     border: 1px solid hsl(169, 82%, 27%);
     padding: 1em;
 }
-form> input:hover,.name input:hover, .QueryType div:hover{
+form> input:hover,.name input:hover, .QueryType div:hover,
+form> input:focus,.name input:focus, .QueryType div:focus{
     outline: 1px solid hsl(169, 82%, 27%)
 }
 
@@ -172,7 +173,9 @@ form> .invalidValue:hover,.name .invalidValue:hover{
     display: none;
 }
 
-
+.queryFocused{
+    outline: 1px solid hsl(169, 82%, 17%);
+}
 
 
 

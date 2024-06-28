@@ -1,14 +1,23 @@
 const formElement = document.getElementsByTagName("form")[0]
+
 const inputElements = [...document.getElementsByClassName("textInput")]
 const invalidStateTextText = [...document.getElementsByClassName("textInputText")]
-const sendButtonElement = document.getElementsByTagName("button")[0]
-const radioInputElements = [...document.getElementsByClassName("radioInput")]
-const invalidStateTextRadio = document.getElementById("textInputRadio")
-const CheckInputElement = document.getElementById("consent")
-const invalidStateTextCheck = document.getElementsByClassName("textInputCheck")[0]
+
 const emailInput = document.getElementById("Email")
 const emailInvalidText = document.getElementsByClassName("emailInvalidText")[0]
-console.log(emailInvalidText)
+
+const queryDivs = [...document.getElementsByClassName("queryDiv")]
+
+const radioInputElements = [...document.getElementsByClassName("radioInput")]
+const invalidStateTextRadio = document.getElementById("textInputRadio")
+
+const CheckInputElement = document.getElementById("consent")
+const invalidStateTextCheck = document.getElementsByClassName("textInputCheck")[0]
+
+const sendButtonElement = document.getElementsByTagName("button")[0]
+
+
+
 
 sendButtonElement.addEventListener("click", ()=>{
     for (let i=0; i<inputElements.length; i++){
@@ -70,4 +79,20 @@ CheckInputElement.addEventListener("click", ()=>{
     if(CheckInputElement.checked){
         invalidStateTextCheck.classList.add("valid-Value-Text")
     }
+})
+
+function isRadioFocused(element) {
+    return document.activeElement === element;
+}
+
+radioInputElements.forEach(radio =>{
+    radio.addEventListener("focus", ()=>{
+        for (i=0;i<radioInputElements.length; i++){
+            if(isRadioFocused(radioInputElements[i])){
+                queryDivs[i].classList.add("queryFocused")
+            }else{
+                queryDivs[i].classList.remove("queryFocused")
+            }
+        }
+    })
 })
